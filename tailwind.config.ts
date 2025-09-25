@@ -19,6 +19,15 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        
+        // Neon Color Palette
+        neon: {
+          blue: "hsl(var(--neon-blue))",
+          pink: "hsl(var(--neon-pink))",
+          yellow: "hsl(var(--neon-yellow))",
+          purple: "hsl(var(--neon-purple))",
+        },
+        
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -57,6 +66,19 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        'khmer': ['Kantumruy Pro', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-neon-primary': 'var(--gradient-neon-primary)',
+        'gradient-neon-secondary': 'var(--gradient-neon-secondary)',
+      },
+      boxShadow: {
+        'neon-blue': 'var(--shadow-neon-blue)',
+        'neon-pink': 'var(--shadow-neon-pink)',
+        'glow-blue': 'var(--shadow-glow-blue)',
+        'glow-pink': 'var(--shadow-glow-pink)',
       },
       borderRadius: {
         lg: "var(--radius)",

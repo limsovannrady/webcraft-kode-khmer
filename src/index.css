@@ -1,105 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Khmer Text Converter Design System - Neon Cyberpunk Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Neon Color Palette */
+    --neon-blue: 180 100% 50%;        /* #00f0ff */
+    --neon-pink: 320 100% 50%;        /* #ff00a0 */
+    --neon-yellow: 52 91% 65%;        /* #f7e155 */
+    --neon-purple: 270 100% 70%;      /* #9f00ff */
+    
+    /* Dark Base Colors */
+    --background: 0 0% 4%;            /* #0a0a0a */
+    --foreground: 0 0% 94%;           /* #f0f0f0 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Glass Container Colors */
+    --card: 0 0% 0%;                 /* Black with transparency */
+    --card-foreground: 0 0% 94%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 94%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Neon Blue Theme */
+    --primary: 180 100% 50%;
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Neon Pink Theme */  
+    --secondary: 320 100% 50%;
+    --secondary-foreground: 0 0% 94%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted: Dark Glass */
+    --muted: 0 0% 18%;               /* #2e2e2e */
+    --muted-foreground: 0 0% 65%;    /* #a6a6a6 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Neon Yellow */
+    --accent: 52 91% 65%;
+    --accent-foreground: 0 0% 4%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive: Neon Pink */
+    --destructive: 320 100% 50%;
+    --destructive-foreground: 0 0% 94%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders and Inputs */
+    --border: 180 100% 50%;          /* Neon blue borders */
+    --input: 0 0% 18%;               /* Dark input background */
+    --ring: 180 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom Gradients */
+    --gradient-neon-primary: linear-gradient(135deg, hsl(var(--neon-blue)), hsl(var(--neon-purple)));
+    --gradient-neon-secondary: linear-gradient(135deg, hsl(var(--neon-pink)), hsl(var(--neon-yellow)));
+    
+    /* 3D Shadow Effects */
+    --shadow-neon-blue: 0 0 15px hsl(var(--neon-blue)), 0 6px 0 hsl(var(--neon-blue));
+    --shadow-neon-pink: 0 0 15px hsl(var(--neon-pink)), 0 6px 0 hsl(var(--neon-pink));
+    --shadow-glow-blue: 0 0 40px hsl(var(--neon-blue));
+    --shadow-glow-pink: 0 0 40px hsl(var(--neon-pink));
+    
+    /* Glass Effects */
+    --glass-bg: rgba(0, 0, 0, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-['Kantumruy_Pro'] overflow-hidden;
+  }
+}
+
+/* Custom Animation Keyframes */
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10vh) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(110vh) scale(0.6);
+    opacity: 0.2;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow: 0 0 10px hsl(var(--neon-blue)), 0 0 20px hsl(var(--neon-blue));
+  }
+  50% {
+    text-shadow: 0 0 20px hsl(var(--neon-blue)), 0 0 30px hsl(var(--neon-blue)), 0 0 40px hsl(var(--neon-blue));
+  }
+}
+
+@keyframes button-press {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(6px);
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px hsl(var(--neon-blue)), 0 0 20px hsl(var(--neon-blue));
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+  
+  .text-glow-pink {
+    text-shadow: 0 0 10px hsl(var(--neon-pink)), 0 0 20px hsl(var(--neon-pink));
+  }
+  
+  .box-glow {
+    box-shadow: var(--shadow-glow-blue);
+  }
+  
+  .box-glow-pink {
+    box-shadow: var(--shadow-glow-pink);
+  }
+  
+  .glass-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--glass-border);
+  }
+  
+  .snowflake {
+    position: absolute;
+    background-color: hsl(var(--neon-blue));
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    animation: snowfall linear infinite;
+  }
+  
+  .btn-3d {
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 0 0 5px hsl(var(--neon-blue));
+    box-shadow: 
+      inset 0 4px 6px rgba(255, 255, 255, 0.2),
+      var(--shadow-neon-blue);
+  }
+  
+  .btn-3d:active {
+    animation: button-press 0.1s ease-in-out;
+    box-shadow: 
+      inset 0 4px 6px rgba(255, 255, 255, 0.2),
+      0 0 15px hsl(var(--neon-blue)),
+      0 0 0 hsl(var(--neon-blue));
+  }
+  
+  .btn-3d-pink {
+    text-shadow: 0 0 5px hsl(var(--neon-pink));
+    box-shadow: 
+      inset 0 4px 6px rgba(255, 255, 255, 0.2),
+      var(--shadow-neon-pink);
+  }
+  
+  .btn-3d-pink:active {
+    animation: button-press 0.1s ease-in-out;
+    box-shadow: 
+      inset 0 4px 6px rgba(255, 255, 255, 0.2),
+      0 0 15px hsl(var(--neon-pink)),
+      0 0 0 hsl(var(--neon-pink));
   }
 }
